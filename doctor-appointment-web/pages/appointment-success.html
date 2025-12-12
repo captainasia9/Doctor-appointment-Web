@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appointment Confirmed | MedBook</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body style="background:#f8f9fa; min-height:100vh; display:flex; align-items:center; justify-content:center;">
+  
+  <div style="text-align:center; background:white; padding:4rem 3rem; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.1); max-width:600px;">
+    <i class="fas fa-check-circle fa-6x" style="color:#28a745; margin-bottom:2rem;"></i>
+    <h1 style="font-size:2.8rem; margin-bottom:1rem; color:#28a745;">Appointment Confirmed!</h1>
+    <p style="font-size:1.3rem; color:#555; margin-bottom:2rem;">
+      Thank you! Your appointment has been successfully booked.
+    </p>
+
+    <div style="background:#f8f9fa; padding:2rem; border-radius:12px; margin:2rem 0; text-align:left;">
+      <h3>Appointment Details</h3>
+      <hr>
+      <p><strong>Doctor:</strong> Dr. John Smith</p>
+      <p><strong>Date:</strong> <span id="successDate"></span></p>
+      <p><strong>Time:</strong> <span id="successTime"></span></p>
+      <p><strong>Location:</strong> MedBook Clinic, Downtown</p>
+    </div>
+
+    <div>
+      <a href="dashboard.html" style="background:#007BFF; color:white; padding:1rem 2rem; border-radius:50px; text-decoration:none; margin:0 1rem;">
+        Go to Dashboard
+      </a>
+      <a href="../index.html" style="background:#6c757d; color:white; padding:1rem 2rem; border-radius:50px; text-decoration:none; margin:0 1rem;">
+        Back to Home
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Get data from URL or localStorage (from booking form)
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('successDate').textContent = params.get('date') || 'Tomorrow';
+    document.getElementById('successTime').textContent = params.get('time') || '10:00 AM';
+  </script>
+</body>
+</html>

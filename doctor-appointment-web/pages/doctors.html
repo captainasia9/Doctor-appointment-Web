@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find a Doctor | MedBook</title>
+  <meta name="description" content="Browse verified doctors by specialty. Book appointments instantly with top-rated specialists.">
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/docter.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Header & Navbar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html"><h2><i class="fas fa-stethoscope"></i> MedBook</h2></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="doctors.html" class="active">Find Doctors</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="auth-links">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Sign Up</a>
+          </li>
+        </ul>
+        <div class="nav-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Find Your Perfect Doctor</h1>
+      <p>Browse from 500+ verified specialists • Instant booking • Real patient reviews</p>
+    </div>
+  </section>
+
+  <!-- Doctors Listing Section -->
+  <section class="doctors featured">
+    <div class="container">
+      <!-- Search Bar -->
+      <div class="search-bar large" style="max-width: 700px; margin: 0 auto 4rem;">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search by name, specialty, or location...">
+        <button onclick="searchDoctors()">Search Doctors</button>
+      </div>
+
+      <!-- Doctors Grid -->
+      <div class="doctors-grid" id="doctorsGrid">
+        <!-- Filled dynamically by script.js -->
+      </div>
+
+      <!-- Load More (Optional) -->
+      <div class="text-center" style="margin-top: 3rem;">
+        <button class="btn-primary-large" onclick="loadMoreDoctors()">Load More Doctors</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal (Same as index.html) -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <h2>Book Your Appointment</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label>Doctor</label>
+          <input type="text" id="doctorName" readonly required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="appointmentDate" required>
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <input type="time" id="appointmentTime" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="patientName" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="patientPhone" placeholder="+1 (555) 000-1234" required>
+        </div>
+        <div class="form-group">
+          <label>Notes (Optional)</label>
+          <textarea id="notes" rows="3" placeholder="Any symptoms or special requests..."></textarea>
+        </div>
+        <button type="submit" class="btn-confirm">
+          Confirm Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Beautiful Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3><i class="fas fa-stethoscope"></i> MedBook</h3>
+          <p>Your trusted platform for booking doctor appointments online. Fast, secure, and reliable healthcare access for everyone.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="doctors.html">Find Doctors</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MedBook. All rights reserved. Made with <i class="fas fa-heart"></i> for better healthcare.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

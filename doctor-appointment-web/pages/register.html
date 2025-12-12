@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | MedBook - Create Your Account</title>
+  <meta name="description" content="Join MedBook today and book doctor appointments instantly. Fast, secure, and free registration.">
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/auth.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="auth-body">
+
+  <!-- ====================== SAME NAVBAR AS MAIN SITE ====================== -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html"><h2><i class="fas fa-stethoscope"></i> MedBook</h2></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="doctors.html">Find Doctors</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="auth-links">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register active">Sign Up</a>
+          </li>
+        </ul>
+        <div class="nav-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====================== REGISTER CARD ====================== -->
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-icon">
+        <i class="fas fa-user-plus"></i>
+      </div>
+      <h2>Create Your Account</h2>
+      <p>Join thousands of patients who trust MedBook for their healthcare</p>
+
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-phone"></i> Phone Number</label>
+          <input type="tel" name="phone" required placeholder="+1 (555) 000-1234">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-lock"></i> Password</label>
+          <input type="password" name="password" required placeholder="Create a strong password">
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-lock"></i> Confirm Password</label>
+          <input type="password" name="confirm_password" required placeholder="Re-type your password">
+        </div>
+
+        <button type="submit" class="btn-confirm">
+          Register Now
+        </button>
+      </form>
+
+      <div class="auth-divider"><span>or</span></div>
+
+      <p class="auth-footer-text">
+        Already have an account? 
+        <a href="login.html" class="auth-link">Login here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ====================== SAME FOOTER AS MAIN SITE ====================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3><i class="fas fa-stethoscope"></i> MedBook</h3>
+          <p>Your trusted platform for booking doctor appointments online. Fast, secure, and reliable healthcare access for everyone.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="doctors.html">Find Doctors</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MedBook. All rights reserved. Made with <i class="fas fa-heart"></i> for better healthcare.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu')?.addEventListener('click', () => {
+      document.querySelector('.nav-menu').classList.toggle('active');
+    });
+
+    // Register form submission
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Registration successful! Welcome to MedBook 🎉\nYou can now log in.');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
